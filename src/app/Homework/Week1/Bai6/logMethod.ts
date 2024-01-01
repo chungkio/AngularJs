@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 
-function logMethodFunction(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-  let originalMethod = descriptor.value;
+const logMethodFunction = (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+  const originalMethod = descriptor.value;
 
-  descriptor.value = function (...args: any[]) {
+  descriptor.value = (...args: any[]) => {
     const currentDate = new Date();
     const formattedDate = currentDate.toISOString();
 
@@ -20,16 +20,16 @@ function logMethodFunction(target: any, propertyKey: string, descriptor: Propert
   };
 
   return descriptor;
-}
+};
 
-function ensureLogFileExists() {
+const ensureLogFileExists = () => {
   const logFileName = 'logs.txt';
 
   if (!fs.existsSync(logFileName)) {
     // If the file doesn't exist, create it
     fs.writeFileSync(logFileName, '');
   }
-}
+};
 
 class LogExample {
   @logMethodFunction
