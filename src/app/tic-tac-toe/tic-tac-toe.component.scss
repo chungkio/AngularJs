@@ -1,0 +1,22 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+}

@@ -1,0 +1,17 @@
+<div>
+    <div *ngFor="let row of board; let rowIndex = index">
+      <div *ngFor="let cell of row; let colIndex = index"
+           (click)="onMove(rowIndex, colIndex)"
+           [class.cell]="true"
+           [class.winner]="gameResult">
+        {{ cell || '' }}
+      </div>
+    </div>
+    <div class="winner-display" *ngIf="gameResult">
+      Winner: {{ gameResult }}
+    </div>
+    <div class="winner-display" *ngIf="!gameResult">
+      Current Player: {{ currentPlayer }}
+    </div>
+  </div>
+  

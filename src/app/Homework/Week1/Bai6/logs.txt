@@ -1,0 +1,1 @@
+[2024-01-01T11:09:51.802Z] Method logsMethod has been called with arguments: [40,225]
